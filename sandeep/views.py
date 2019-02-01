@@ -11,9 +11,9 @@ def index(request):
 
 def db(request):
 
-    greeting = Greeting()
-    greeting.save()
+    user = Users()
+    user.save()
 
-    greetings = Greeting.objects.all()
+    users = Users.objects.all()
 
-    return render(request, "db.html", {"greetings": greetings})
+    return render(request, "db.html", {"greetings": users})
