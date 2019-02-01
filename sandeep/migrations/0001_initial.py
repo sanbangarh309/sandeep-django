@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=50)),
-                ('user_id', models.ForeignKey(Users, on_delete=models.CASCADE)),
+                ('user_id', models.IntegerField()),
                 ('image', models.CharField(max_length=100)),
                 ('about', models.CharField(max_length=255)),
                 ('start_date', models.DateField()),
