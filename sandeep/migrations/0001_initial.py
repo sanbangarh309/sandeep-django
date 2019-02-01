@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
                 ('password', models.CharField(max_length=100)),
                 ('address', models.CharField(max_length=255)),
                 ('phone', models.CharField(max_length=30)),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name=b'date created')),
+                ('when', models.DateTimeField(auto_now_add=True, verbose_name=b'date created')),
             ],
         ),
         migrations.CreateModel(
@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
                 ('start_date', models.DateField()),
                 ('end_date', models.DateField()),
                 ('phone', models.CharField(max_length=30)),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name=b'date created')),
+                ('when', models.DateTimeField(auto_now_add=True, verbose_name=b'date created')),
             ],
         ),
     ]
