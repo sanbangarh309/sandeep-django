@@ -14,10 +14,31 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Greeting',
+            name='Users',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('when', models.DateTimeField(auto_now_add=True, verbose_name=b'date created')),
+                ('name', models.CharField(max_length=50)),
+                ('email', models.CharField(max_length=100)),
+                ('image', models.CharField(max_length=100)),
+                ('about', models.CharField(max_length=255)),
+                ('password', models.CharField(max_length=100)),
+                ('address', models.CharField(max_length=255)),
+                ('phone', models.CharField(max_length=30)),
+                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name=b'date created')),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Projects',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('name', models.CharField(max_length=50)),
+                ('user_id', models.ForeignKey(Users, on_delete=models.CASCADE)),
+                ('image', models.CharField(max_length=100)),
+                ('about', models.CharField(max_length=255)),
+                ('start_date', models.DateField()),
+                ('end_date', models.DateField()),
+                ('phone', models.CharField(max_length=30)),
+                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name=b'date created')),
             ],
         ),
     ]
