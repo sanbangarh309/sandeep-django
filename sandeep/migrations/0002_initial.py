@@ -14,17 +14,16 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Users',
+            name='Projects',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=50)),
-                ('email', models.CharField(max_length=100)),
+                ('user_id', models.IntegerField()),
                 ('image', models.CharField(max_length=100)),
                 ('about', models.CharField(max_length=255)),
-                ('password', models.CharField(max_length=100)),
-                ('address', models.CharField(max_length=255)),
-                ('phone', models.CharField(max_length=30)),
+                ('start_date', models.DateField()),
+                ('end_date', models.DateField()),
                 ('when', models.DateTimeField(auto_now_add=True, verbose_name=b'date created')),
             ],
-        )
+        ),
     ]
