@@ -10,6 +10,9 @@ def index(request):
 
 def db(request):
     user = Users()
+    user.name = 'sandeep bangarh'
+    user.email = 'sanbangarh309@gmail.com'
+    user.phone = '9896747812'
     user.save()
 
     users = Users.objects.all()
