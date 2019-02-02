@@ -16,6 +16,7 @@ import sandeep.views
 
 urlpatterns = [
     path("", sandeep.views.index, name="index"),
-    path("db/", sandeep.views.db, name="db"),
+    # path("db/", sandeep.views.db, name="db"),
+    # path("db/", sandeep.views.db, name="db"),
     path("admin/", admin.site.urls),
 ]
