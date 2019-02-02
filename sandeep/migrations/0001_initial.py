@@ -14,27 +14,27 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Users',
+            name='User',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=50)),
-                ('email', models.CharField(max_length=100)),
-                ('image', models.CharField(max_length=100)),
-                ('about', models.CharField(max_length=255)),
+                ('email', models.CharField(max_length=60)),
+                ('image', models.FileField(upload_to='static/img/profile/')),
+                ('about', models.TextField(null=True)),
                 ('password', models.CharField(max_length=100)),
-                ('address', models.CharField(max_length=255)),
+                ('address', models.TextField(null=True)),
                 ('phone', models.CharField(max_length=30)),
-                ('when', models.DateTimeField(auto_now_add=True, verbose_name=b'date created')),
+                ('when', models.DateTimeField(auto_now_add=True, verbose_name='date created')),
             ],
         ),
         migrations.CreateModel(
-            name='Projects',
+            name='Project',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=50)),
                 ('user_id', models.IntegerField()),
                 ('image', models.CharField(max_length=100)),
-                ('about', models.CharField(max_length=255)),
+                ('about', models.TextField(null=True)),
                 ('start_date', models.DateField()),
                 ('end_date', models.DateField()),
                 ('when', models.DateTimeField(auto_now_add=True, verbose_name=b'date created')),
