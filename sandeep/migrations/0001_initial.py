@@ -33,11 +33,11 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=50)),
                 ('user_id', models.IntegerField()),
-                ('image', models.CharField(max_length=100)),
+                ('image', models.FileField(upload_to='static/img/projects/')),
                 ('about', models.TextField(null=True)),
                 ('start_date', models.DateField()),
                 ('end_date', models.DateField()),
-                ('when', models.DateTimeField(auto_now_add=True, verbose_name=b'date created')),
+                ('when', DateTimeField(auto_now_add=True, verbose_name='date created')),
             ],
         ),
     ]
