@@ -6,7 +6,11 @@ from .models import User,Project
 # Create your views here.
 def index(request):
     # return HttpResponse('Hello from Python!')
-    user = User.objects.get(pk=1)
+    try:
+        user = User.objects.get(pk=1)
+    except User.DoesNotExist:
+        user = None
+    # user = User.objects.get(pk=1)
     projects = Project.objects.all()
     print(projects)
     return render(request, "index.html",{"sandeep": user,"projects":projects})
