@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
                 ('about', models.TextField(null=True)),
                 ('start_date', models.DateField()),
                 ('end_date', models.DateField()),
-                ('when', DateTimeField(auto_now_add=True, verbose_name='date created')),
+                ('when', models.DateTimeField(auto_now_add=True, verbose_name=b'date created')),
             ],
         ),
     ]
