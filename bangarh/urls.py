@@ -15,7 +15,9 @@ import sandeep.views
 # Learn more here: https://docs.djangoproject.com/en/2.1/topics/http/urls/
 
 urlpatterns = [
-    path("", sandeep.views.index, name="index"),
+    path("", sandeep.views.index, name="Home"),
+    path("about/", sandeep.views.about, name="About"),
+    path("portfolio/", sandeep.views.portfolio, name="Portfolio"),
     # path("db/", sandeep.views.db, name="db"),
     # path("db/", sandeep.views.db, name="db"),
     path("admin/", admin.site.urls),

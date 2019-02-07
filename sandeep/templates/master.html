@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load san_custom %}
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 <head>
@@ -53,7 +54,7 @@
 	        <ul class="nav-menu">
 	          <li class=""><a {% if page == "Home" %} class="active" {% endif %} href="./">Home</a></li>
 	          <li><a {% if page == "About" %} class="active" {% endif %} href="./about">About</a></li>
-	          <li><a {% if page == "Portfolio" %} class="active" {% endif %} href="./portfolio">Portfolio</a></li>
+	          <li><a {% if page == "Portfolio" %} class="active" {% endif %} href="http://{{ request.get_host }}/portfolio">Portfolio</a></li>
 	          <li class="menu-has-children"><a href="#">Pages</a>
 	            <ul>
 	              <li><a href="elements.html">Elements</a></li>

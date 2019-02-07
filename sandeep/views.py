@@ -10,10 +10,24 @@ def index(request):
         user = User.objects.get(pk=1)
     except User.DoesNotExist:
         user = None
-    # user = User.objects.get(pk=1)
     projects = Project.objects.all()
-    print(projects)
-    return render(request, "index.html",{"sandeep": user,"projects":projects})
+    return render(request, "index.html",{"page":"Home","sandeep": user,"projects":projects})
+
+def about(request):
+    try:
+        user = User.objects.get(pk=1)
+    except User.DoesNotExist:
+        user = None
+    return render(request, "about.html",{"page":"About","sandeep": user})
+
+def portfolio(request):
+    try:
+        user = User.objects.get(pk=1)
+    except User.DoesNotExist:
+        user = None
+    projects = Project.objects.all()
+    return render(request, "portfolio.html",{"page":"Portfolio","sandeep": user,"projects":projects})
+
 
 def db(request):
     user = User()
