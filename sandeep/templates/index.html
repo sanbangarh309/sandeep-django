@@ -1,6 +1,7 @@
 {% extends "master.html" %}
 {% load staticfiles %}
 {% block body %}
+{% load san_custom %}
 <!-- start banner Area -->
 <section class="home-banner-area">
   <div class="container">
@@ -132,7 +133,7 @@
             <div class="relative">
               <div class="thumb">
                 <div class="overlay overlay-bg"></div>
-                <img class="image img-fluid" src="{{project.image}}" alt="">
+                <img class="image img-fluid" src="{{project.image|cut:"sandeep/"}}" alt="">
               </div>
               <div class="middle">
                 <h4>{{project.name}}</h4>
